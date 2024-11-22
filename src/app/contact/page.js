@@ -8,10 +8,17 @@ import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import { input } from "./style";
+import ButtonComp from "@/components/button/button";
+import { useRouter } from "next/navigation";
 
 const ContactPage = () => {
-  const { isDesktop, isTablet } = useResponsive();
+  const { isDesktop, isTablet, isMobile } = useResponsive();
   const formRef = useRef();
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/");
+  };
 
   // State for form fields
   const [formData, setFormData] = useState({
@@ -185,6 +192,8 @@ const ContactPage = () => {
           />
         </Box>
       </Box>
+      {isMobile && <ButtonComp onClick={handleClick} />}
+      {isTablet && <ButtonComp onClick={handleClick} />}
       <ToastContainer />
     </LayoutComp>
   );

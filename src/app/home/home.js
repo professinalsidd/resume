@@ -110,8 +110,10 @@ const HomePage = () => {
           }}
         />
       </Box>
-      {isMobile || (isTablet && <ButtonComp onClick={handleNextClick} />)}
-      {isMobile || (isTablet && <SocialComp />)}
+      {isMobile && <ButtonComp onClick={handleNextClick} />}
+      {isMobile && <SocialComp />}
+      {isTablet && <ButtonComp onClick={handleNextClick} />}
+      {isTablet && <SocialComp />}
     </Box>
   );
 };

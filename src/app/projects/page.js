@@ -128,7 +128,8 @@ const ProjectsPage = () => {
             }}
           />
         </Box>
-        {isMobile || (isTablet && <ButtonComp onClick={handleClick} />)}
+        {isMobile && <ButtonComp onClick={handleClick} />}
+        {isTablet && <ButtonComp onClick={handleClick} />}
       </Box>
     </LayoutComp>
   );

@@ -102,7 +102,8 @@ const AboutPage = () => {
             }}
           />
         </Box>
-        {isMobile || (isTablet && <ButtonComp onClick={handleNextClick} />)}
+        {isMobile && <ButtonComp onClick={handleNextClick} />}
+        {isTablet && <ButtonComp onClick={handleNextClick} />}
       </Box>
     </LayoutComp>
   );

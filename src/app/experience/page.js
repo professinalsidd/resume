@@ -123,7 +123,8 @@ const ExperiencePage = () => {
             }}
           />
         </Box>
-        {isMobile || (isTablet && <ButtonComp onClick={handleNextClick} />)}
+        {isMobile && <ButtonComp onClick={handleClick} />}
+        {isTablet && <ButtonComp onClick={handleClick} />}
       </Box>
     </LayoutComp>
   );
