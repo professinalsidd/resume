@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { COLORS, useResponsive } from "@/themes/themes";
@@ -9,6 +9,24 @@ import ButtonComp from "@/components/button/button";
 const HomePage = () => {
   const { isDesktop, isTablet } = useResponsive();
   const router = useRouter();
+
+  const [experience, setExperience] = useState(0);
+
+  useEffect(() => {
+    const calculateExperience = () => {
+      const startDate = new Date("2021-09-06"); // Your journey start date
+      const currentDate = new Date();
+      const diffInMs = currentDate - startDate;
+      const diffInYears = diffInMs / (1000 * 60 * 60 * 24 * 365.25);
+      setExperience(diffInYears.toFixed(1)); // Show experience up to one decimal place
+    };
+
+    calculateExperience();
+
+    // Optional: Recalculate experience every day
+    const interval = setInterval(calculateExperience, 86400000); // 24 hours in milliseconds
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNextClick = () => {
     router.push("/about");
@@ -42,7 +60,7 @@ const HomePage = () => {
             fontSize: { xs: 16, md: 20 },
           }}
         >
-          A passionate and skilled Frontend Developer with 2.9 years of
+          A passionate and skilled Frontend Developer with {experience} years of
           experience in building responsive and interactive web and mobile
           applications. Proficient in React.js, React Native, Material UI,
           TypeScript, and more. Seeking to contribute to innovative projects in
