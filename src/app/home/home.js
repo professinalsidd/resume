@@ -8,7 +8,7 @@ import ButtonComp from "@/components/button/button";
 import SocialComp from "@/components/social/social";
 
 const HomePage = () => {
-  const { isDesktop, isTablet } = useResponsive();
+  const { isDesktop, isTablet, isMobile } = useResponsive();
   const router = useRouter();
 
   const [experience, setExperience] = useState(0);
@@ -75,7 +75,6 @@ const HomePage = () => {
           <strong>Address:</strong> Punjabi colony, Hapur, 245101
         </Typography>
         {isDesktop && <ButtonComp onClick={handleNextClick} />}
-        {/* Social Media Icons */}
         {isDesktop && <SocialComp />}
       </Box>
       <Box>
@@ -89,8 +88,8 @@ const HomePage = () => {
           }}
         />
       </Box>
-      {!isDesktop && <ButtonComp onClick={handleNextClick} />}
-      {!isDesktop && <SocialComp />}
+      {isMobile || (isTablet && <ButtonComp onClick={handleNextClick} />)}
+      {isMobile || (isTablet && <SocialComp />)}
     </Box>
   );
 };

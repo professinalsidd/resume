@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import { COLORS, useResponsive } from "@/themes/themes";
+import { useResponsive } from "@/themes/themes";
 import LayoutComp from "@/components/layout/layout";
 import { DATA } from "@/db/db";
 import ButtonComp from "@/components/button/button";
 import { useRouter } from "next/navigation";
 
 const ExperiencePage = () => {
-  const { isDesktop, isTablet } = useResponsive();
+  const { isDesktop, isTablet, isMobile } = useResponsive();
   const router = useRouter();
 
   const handleClick = () => {
@@ -101,7 +101,7 @@ const ExperiencePage = () => {
             }}
           />
         </Box>
-        {!isDesktop && <ButtonComp onClick={handleClick} />}
+        {isMobile || (isTablet && <ButtonComp onClick={handleNextClick} />)}
       </Box>
     </LayoutComp>
   );

@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProjectsPage = () => {
-  const { isDesktop, isTablet } = useResponsive();
+  const { isDesktop, isTablet, isMobile } = useResponsive();
   const router = useRouter();
 
   const handleClick = () => {
@@ -106,7 +106,7 @@ const ProjectsPage = () => {
             }}
           />
         </Box>
-        {!isDesktop && <ButtonComp onClick={handleClick} />}
+        {isMobile || (isTablet && <ButtonComp onClick={handleClick} />)}
       </Box>
     </LayoutComp>
   );
