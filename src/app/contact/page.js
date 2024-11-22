@@ -4,10 +4,14 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import LayoutComp from "@/components/layout/layout";
 import { useResponsive } from "@/themes/themes";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { input } from "./style";
 
 const ContactPage = () => {
   const { isDesktop, isTablet } = useResponsive();
+  const formRef = useRef();
 
   // State for form fields
   const [formData, setFormData] = useState({
@@ -29,7 +33,27 @@ const ContactPage = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    // Send email using EmailJS
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_nz1dnbb",
+          "template_w0z3u62",
+          formRef.current,
+          "JOMphylOCa_UQxkWz"
+        )
+        .then(
+          (result) => {
+            toast.success("Email sent successfully!");
+            setFormData({ fullName: "", email: "", phone: "", message: "" });
+          },
+          (error) => {
+            console.log("Failed to send email:", error);
+            toast.error("Failed to send email. Please try again later.");
+          }
+        );
+    }
   };
 
   return (
@@ -66,6 +90,7 @@ const ContactPage = () => {
           </Typography>
           <Box
             component="form"
+            ref={formRef}
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -83,7 +108,8 @@ const ContactPage = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleInputChange}
-              sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+              required
+              sx={input}
             />
             <TextField
               label="Email Address"
@@ -92,7 +118,8 @@ const ContactPage = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+              sx={input}
+              required
             />
             <TextField
               label="Phone Number"
@@ -100,7 +127,7 @@ const ContactPage = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+              sx={input}
             />
             <TextField
               label="Message"
@@ -110,7 +137,8 @@ const ContactPage = () => {
               onChange={handleInputChange}
               multiline
               rows={4}
-              sx={{ backgroundColor: "#fff", borderRadius: 1 }}
+              sx={input}
+              required
             />
             <Button
               type="submit"
