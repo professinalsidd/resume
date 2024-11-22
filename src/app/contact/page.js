@@ -6,7 +6,7 @@ import { useResponsive } from "@/themes/themes";
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { input } from "./style";
 
 const ContactPage = () => {
@@ -38,10 +38,10 @@ const ContactPage = () => {
     if (formRef.current) {
       emailjs
         .sendForm(
-          "service_nz1dnbb",
-          "template_w0z3u62",
+          "service_poym2jm",
+          "template_1px5zuc",
           formRef.current,
-          "JOMphylOCa_UQxkWz"
+          "l5HY5F6keOfOTY0DI"
         )
         .then(
           (result) => {
@@ -164,6 +164,7 @@ const ContactPage = () => {
           />
         </Box>
       </Box>
+      <ToastContainer />
     </LayoutComp>
   );
 };

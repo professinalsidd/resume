@@ -1,3 +1,4 @@
+"use client";
 import LayoutComp from "@/components/layout/layout";
 import HomePage from "./home/home";
 
