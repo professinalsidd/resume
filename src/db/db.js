@@ -1,4 +1,31 @@
 export const DATA = {
+  projects: [
+    {
+      label: "Live Projects & GitHub Repositories",
+      details: [
+        {
+          name: "Sahej PlayStore",
+          link: "",
+        },
+        {
+          name: "NextGenCoders Program Web",
+          link: "",
+        },
+        {
+          name: "Panoram Apk",
+          link: "",
+        },
+        {
+          name: "Beans Apk",
+          link: "",
+        },
+        {
+          name: "Goal Apk",
+          link: "",
+        },
+      ],
+    },
+  ],
   experience: [
     {
       role: "Frontend Developer",

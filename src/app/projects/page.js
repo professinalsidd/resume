@@ -1,22 +1,21 @@
 "use client";
 
-import Image from "next/image";
-import { Box, Typography, Button } from "@mui/material";
-import React from "react";
-import { COLORS, useResponsive } from "@/themes/themes";
+import ButtonComp from "@/components/button/button";
 import LayoutComp from "@/components/layout/layout";
 import { DATA } from "@/db/db";
-import ButtonComp from "@/components/button/button";
+import { useResponsive } from "@/themes/themes";
+import { Box, Typography } from "@mui/material";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import React from "react";
 
-const ExperiencePage = () => {
+const ProjectsPage = () => {
   const { isDesktop, isTablet } = useResponsive();
   const router = useRouter();
 
   const handleClick = () => {
     router.push("/projects");
   };
-
   return (
     <LayoutComp>
       <Box
@@ -39,7 +38,7 @@ const ExperiencePage = () => {
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Experience
+            Projects
           </Typography>
 
           {/* Scrollable Container */}
@@ -53,7 +52,7 @@ const ExperiencePage = () => {
               scrollbarWidth: "none",
             }}
           >
-            {DATA.experience.map((item, index) => (
+            {DATA.projects.map((item, index) => (
               <Box
                 key={index}
                 sx={{
@@ -69,15 +68,11 @@ const ExperiencePage = () => {
                     fontSize: { xs: 16, md: 20 },
                   }}
                 >
-                  <strong>{item.role}</strong>
-                  <br />
-                  <em>{item.company}</em>
-                  <br />
-                  <strong>{item.duration}</strong>
+                  <strong>{item.label}</strong>
                   <ul style={{ marginLeft: "1rem" }}>
                     {item.details.map((detail, i) => (
                       <li key={i} style={{ marginBottom: 5 }}>
-                        {detail}
+                        {detail.name}
                       </li>
                     ))}
                   </ul>
@@ -92,7 +87,7 @@ const ExperiencePage = () => {
         {/* Right Section */}
         <Box>
           <Image
-            src="/assets/experience.png"
+            src="/assets/project.png"
             alt="Profile Image"
             width={isDesktop ? 600 : isTablet ? 500 : 300}
             height={isDesktop ? 600 : isTablet ? 500 : 300}
@@ -106,4 +101,4 @@ const ExperiencePage = () => {
   );
 };
 
-export default ExperiencePage;
+export default ProjectsPage;
