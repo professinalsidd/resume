@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content={metadata.description} />
         <link rel="canonical" href="https://resume-teal-gamma.vercel.app/" />
         <title>{metadata.title}</title>
+        {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-P87CBSWTJE"
@@ -41,7 +42,9 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-P87CBSWTJE');
+            gtag('config', 'G-P87CBSWTJE', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
       </head>
