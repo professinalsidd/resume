@@ -81,7 +81,7 @@ const SkillsPage = () => {
             ))}
           </Box>
           {/* Button */}
-          <ButtonComp onClick={handleClick} />
+          {isDesktop && <ButtonComp onClick={handleClick} />}
         </Box>
 
         {/* Right Section */}
@@ -96,6 +96,7 @@ const SkillsPage = () => {
             }}
           />
         </Box>
+        {!isDesktop && <ButtonComp onClick={handleClick} />}
       </Box>
     </LayoutComp>
   );

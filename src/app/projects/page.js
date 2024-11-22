@@ -81,7 +81,7 @@ const ProjectsPage = () => {
             ))}
           </Box>
           {/* Button */}
-          <ButtonComp onClick={handleClick} />
+          {isDesktop && <ButtonComp onClick={handleClick} />}
         </Box>
 
         {/* Right Section */}
@@ -96,6 +96,7 @@ const ProjectsPage = () => {
             }}
           />
         </Box>
+        {!isDesktop && <ButtonComp onClick={handleClick} />}
       </Box>
     </LayoutComp>
   );

@@ -86,7 +86,7 @@ const ExperiencePage = () => {
             ))}
           </Box>
           {/* Button */}
-          <ButtonComp onClick={handleClick} />
+          {isDesktop && <ButtonComp onClick={handleClick} />}
         </Box>
 
         {/* Right Section */}
@@ -101,6 +101,7 @@ const ExperiencePage = () => {
             }}
           />
         </Box>
+        {!isDesktop && <ButtonComp onClick={handleClick} />}
       </Box>
     </LayoutComp>
   );

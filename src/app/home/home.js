@@ -74,7 +74,7 @@ const HomePage = () => {
           <strong>Contact:</strong> 9259457900 <br />
           <strong>Address:</strong> New Shiv Puri, Hapur, 245101
         </Typography>
-        <ButtonComp onClick={handleNextClick} />
+        {isDesktop && <ButtonComp onClick={handleNextClick} />}
       </Box>
       <Box>
         <Image
@@ -87,6 +87,7 @@ const HomePage = () => {
           }}
         />
       </Box>
+      {!isDesktop && <ButtonComp onClick={handleNextClick} />}
     </Box>
   );
 };

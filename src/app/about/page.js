@@ -67,7 +67,7 @@ const AboutPage = () => {
           >
             Languages English | Hindi | Punjabi
           </Typography>
-          <ButtonComp onClick={handleNextClick} />
+          {isDesktop && <ButtonComp onClick={handleNextClick} />}
         </Box>
         <Box>
           <Image
@@ -80,6 +80,7 @@ const AboutPage = () => {
             }}
           />
         </Box>
+        {!isDesktop && <ButtonComp onClick={handleNextClick} />}
       </Box>
     </LayoutComp>
   );
