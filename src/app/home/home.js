@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { COLORS, useResponsive } from "@/themes/themes";
+import ButtonComp from "@/components/button/button";
 
 const HomePage = () => {
   const { isDesktop, isTablet } = useResponsive();
@@ -55,27 +56,7 @@ const HomePage = () => {
           <strong>Contact:</strong> 9259457900 <br />
           <strong>Address:</strong> New Shiv Puri, Hapur, 245101
         </Typography>
-        <Box
-          sx={{
-            display: { xs: "flex" },
-            justifyContent: { xs: "center", md: "flex-start" },
-          }}
-        >
-          <Button
-            onClick={handleNextClick}
-            sx={{
-              background: "transparent",
-              border: "0.5px solid #CD6464",
-              color: COLORS.WHITE,
-              padding: "5px 30px",
-              "&:hover": {
-                background: "#CD6464",
-              },
-            }}
-          >
-            Next
-          </Button>
-        </Box>
+        <ButtonComp onClick={handleNextClick} />
       </Box>
       <Box>
         <Image

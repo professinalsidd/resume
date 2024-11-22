@@ -1,19 +1,20 @@
 "use client";
 import Image from "next/image";
-import NavbarComp from "@/components/navbar/navbar";
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { COLORS, useResponsive } from "@/themes/themes";
 import LayoutComp from "@/components/layout/layout";
+import ButtonComp from "@/components/button/button";
 
 const AboutPage = () => {
   const { isDesktop, isTablet } = useResponsive();
-  //   const router = useRouter();
+  const router = useRouter();
 
-  //   const handleNextClick = () => {
-  //     router.push("/about");
-  //   };
+  const handleNextClick = () => {
+    router.push("/experience");
+  };
+
   return (
     <LayoutComp>
       <Box
@@ -66,27 +67,7 @@ const AboutPage = () => {
           >
             Languages English | Hindi | Punjabi
           </Typography>
-          <Box
-            sx={{
-              display: { xs: "flex" },
-              justifyContent: { xs: "center", md: "flex-start" },
-            }}
-          >
-            <Button
-              //   onClick={handleNextClick}
-              sx={{
-                background: "transparent",
-                border: "0.5px solid #CD6464",
-                color: COLORS.WHITE,
-                padding: "5px 30px",
-                "&:hover": {
-                  background: "#CD6464",
-                },
-              }}
-            >
-              Next
-            </Button>
-          </Box>
+          <ButtonComp onClick={handleNextClick} />
         </Box>
         <Box>
           <Image
