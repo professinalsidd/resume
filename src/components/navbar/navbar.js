@@ -10,8 +10,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import Link from "next/link";
+import { COLORS } from "@/themes/themes";
 
-const pages = ["Home", "About", "Experience", "Projects", "Skills", "Contact"];
+const pages = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Projects", href: "/projects" },
+  { label: "Skills", href: "/skills" },
+  { label: "Contact", href: "/contact" },
+];
 
 function NavbarComp() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,7 +44,7 @@ function NavbarComp() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -76,8 +85,22 @@ function NavbarComp() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Link
+                    href={page.href}
+                    passHref
+                    style={{ textDecoration: "none", color: COLORS.BLACK }}
+                  >
+                    <Typography
+                      sx={{
+                        textAlign: "center",
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {page.label}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -86,7 +109,7 @@ function NavbarComp() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -110,34 +133,39 @@ function NavbarComp() {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  m: 2,
-                  color: "white",
-                  display: "block",
-                  "&:hover": {
-                    textDecoration: "underline",
-                    background: "rgba(206, 140, 126, 1)",
-                    borderRadius: 2,
-                    animation: "hoverEffect 0.5s ease-in",
-                  },
-                  "@keyframes hoverEffect": {
-                    "0%": { transform: "scale(1)" },
-                    "50%": { transform: "scale(1.05)" },
-                    "100%": { transform: "scale(1)" },
-                  },
-                }}
+              <Link
+                key={page.label}
+                href={page.href}
+                style={{ textDecoration: "none" }}
+                passHref
               >
-                {page}
-              </Button>
+                <Button
+                  sx={{
+                    m: 2,
+                    color: "white",
+                    display: "block",
+                    "&:hover": {
+                      textDecoration: "underline",
+                      background: "rgba(206, 140, 126, 1)",
+                      borderRadius: 2,
+                      animation: "hoverEffect 0.5s ease-in",
+                    },
+                    "@keyframes hoverEffect": {
+                      "0%": { transform: "scale(1)" },
+                      "50%": { transform: "scale(1.05)" },
+                      "100%": { transform: "scale(1)" },
+                    },
+                  }}
+                >
+                  {page.label}
+                </Button>
+              </Link>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}></Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default NavbarComp;
