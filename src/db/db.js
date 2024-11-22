@@ -78,23 +78,47 @@ export const DATA = {
       label: "Live Projects & GitHub Repositories",
       details: [
         {
-          name: "Sahej PlayStore",
-          link: "",
+          name: "Sahej App Store",
+          link: "https://apps.apple.com/in/app/sahej-health-app/id6469026236",
+        },
+        {
+          name: "Dank Play Store",
+          link: "https://play.google.com/store/apps/details?id=com.joindank.dankapp&hl=en_IN",
         },
         {
           name: "NextGenCoders Program Web",
-          link: "",
+          link: "https://nextgencodersprogram.online/",
+        },
+        {
+          name: "PixelWaves web",
+          link: "https://pixel-waves-web.vercel.app/",
         },
         {
           name: "Panoram Apk",
-          link: "",
+          link: "https://www.mediafire.com/file/4xrbe7jxfecd5vp/panorama.apk/file",
         },
         {
           name: "Beans Apk",
-          link: "",
+          link: "https://www.mediafire.com/file/jcuuljue7ju6a4a/beans.apk/file",
         },
         {
           name: "Goal Apk",
+          link: "https://www.mediafire.com/file/kfmoe7tnb9h20yi/goal.apk/file",
+        },
+        {
+          name: "Railway Apk",
+          link: "https://www.mediafire.com/file/h7vaod7j7ndafim/railway.apk/file",
+        },
+        {
+          name: "Vantaan taxi web",
+          link: "",
+        },
+        {
+          name: "Stock hisab web",
+          link: "",
+        },
+        {
+          name: "Fixcel web",
           link: "",
         },
       ],

@@ -3,7 +3,7 @@
 import ButtonComp from "@/components/button/button";
 import LayoutComp from "@/components/layout/layout";
 import { DATA } from "@/db/db";
-import { useResponsive } from "@/themes/themes";
+import { COLORS, useResponsive } from "@/themes/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -72,7 +72,17 @@ const ProjectsPage = () => {
                   <ul style={{ marginLeft: "1rem" }}>
                     {item.details.map((detail, i) => (
                       <li key={i} style={{ marginBottom: 5 }}>
-                        {detail.name}
+                        <a
+                          href={detail.link}
+                          target="_blank"
+                          style={{
+                            textDecoration: "none",
+                            color: COLORS.WHITE,
+                            textTransform: "capitalize",
+                          }}
+                        >
+                          {detail.name}
+                        </a>
                       </li>
                     ))}
                   </ul>

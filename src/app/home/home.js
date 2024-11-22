@@ -71,8 +71,8 @@ const HomePage = () => {
           sx={{ color: "#fff", fontSize: { xs: 16, md: 20 } }}
         >
           <strong>Email:</strong> professionalsiddmail@gmail.com <br />
-          <strong>Contact:</strong> 9259457900 <br />
-          <strong>Address:</strong> New Shiv Puri, Hapur, 245101
+          <strong>Contact:</strong> +91 9259457900 <br />
+          <strong>Address:</strong> Punjabi colony, Hapur, 245101
         </Typography>
         {isDesktop && <ButtonComp onClick={handleNextClick} />}
       </Box>
