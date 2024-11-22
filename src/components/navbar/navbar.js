@@ -12,15 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import { COLORS } from "@/themes/themes";
-
-const pages = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Projects", href: "/projects" },
-  { label: "Skills", href: "/skills" },
-  { label: "Contact", href: "/contact" },
-];
+import { pages } from "@/db/db";
 
 function NavbarComp() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

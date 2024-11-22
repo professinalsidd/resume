@@ -14,21 +14,35 @@ const ButtonComp = ({ onClick }) => {
       <Button
         onClick={onClick}
         sx={{
-          background: "transparent",
-          border: "0.5px solid #CD6464",
+          position: "relative",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          background: "linear-gradient(90deg, #ff7eb3, #ff758c, #fd5c63)",
+          border: "none",
           color: COLORS.WHITE,
-          padding: "5px 30px",
+          padding: "10px 40px",
+          fontSize: "16px",
+          textTransform: "uppercase",
+          fontWeight: "bold",
+          borderRadius: "50px",
+          transition: "all 0.4s ease-in-out",
           "&:hover": {
-            background: "#CD6464",
-            color: COLORS.WHITE,
+            background: "linear-gradient(90deg, #fd5c63, #ff758c, #ff7eb3)",
+            transform: "scale(1.05)",
+            boxShadow: "0 4px 15px rgba(255, 94, 98, 0.5)",
           },
         }}
       >
+        Click Me
         <ArrowRightAltIcon
           sx={{
-            color: COLORS.BLACK,
+            fontSize: "24px",
+            transition: "transform 0.3s ease-in-out, color 0.3s",
             "&:hover": {
-              color: COLORS.WHITE,
+              transform: "translateX(5px)",
+              color: "#ffffff",
             },
           }}
         />
