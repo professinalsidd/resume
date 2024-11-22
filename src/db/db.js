@@ -1,3 +1,10 @@
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 export const pages = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -5,6 +12,35 @@ export const pages = [
   { label: "Projects", href: "/projects" },
   { label: "Skills", href: "/skills" },
   { label: "Contact", href: "/contact" },
+];
+
+export const socialLinks = [
+  { icon: <TwitterIcon />, color: "#1DA1F2", url: "https://x.com/sidd_vip" },
+  {
+    icon: <FacebookIcon />,
+    color: "#4267B2",
+    url: "https://www.facebook.com/sidd.professional",
+  },
+  {
+    icon: <InstagramIcon />,
+    color: "#C13584",
+    url: "https://www.instagram.com/sidd.professional/profilecard/?igsh=bnFub2tuZGI1OHBn",
+  },
+  {
+    icon: <EmailIcon />,
+    color: "#EA4335",
+    url: "mailto:professionalsiddmail@gmail.com",
+  },
+  {
+    icon: <WhatsAppIcon />,
+    color: "#25D366",
+    url: "https://wa.me/919259457900",
+  },
+  {
+    icon: <GitHubIcon />,
+    color: "#333",
+    url: "https://github.com/professinalsidd",
+  },
 ];
 
 export const DATA = {

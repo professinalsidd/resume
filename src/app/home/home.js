@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { COLORS, useResponsive } from "@/themes/themes";
+import { useResponsive } from "@/themes/themes";
 import ButtonComp from "@/components/button/button";
+import SocialComp from "@/components/social/social";
 
 const HomePage = () => {
   const { isDesktop, isTablet } = useResponsive();
@@ -14,17 +15,16 @@ const HomePage = () => {
 
   useEffect(() => {
     const calculateExperience = () => {
-      const startDate = new Date("2021-09-06"); // Your journey start date
+      const startDate = new Date("2021-09-06");
       const currentDate = new Date();
       const diffInMs = currentDate - startDate;
       const diffInYears = diffInMs / (1000 * 60 * 60 * 24 * 365.25);
-      setExperience(diffInYears.toFixed(1)); // Show experience up to one decimal place
+      setExperience(diffInYears.toFixed(1));
     };
 
     calculateExperience();
 
-    // Optional: Recalculate experience every day
-    const interval = setInterval(calculateExperience, 86400000); // 24 hours in milliseconds
+    const interval = setInterval(calculateExperience, 86400000);
     return () => clearInterval(interval);
   }, []);
 
@@ -75,6 +75,8 @@ const HomePage = () => {
           <strong>Address:</strong> Punjabi colony, Hapur, 245101
         </Typography>
         {isDesktop && <ButtonComp onClick={handleNextClick} />}
+        {/* Social Media Icons */}
+        {isDesktop && <SocialComp />}
       </Box>
       <Box>
         <Image
@@ -88,6 +90,7 @@ const HomePage = () => {
         />
       </Box>
       {!isDesktop && <ButtonComp onClick={handleNextClick} />}
+      {!isDesktop && <SocialComp />}
     </Box>
   );
 };
