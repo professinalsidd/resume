@@ -157,7 +157,6 @@ export const DATA = {
           name: "Railway Apk",
           link: "https://www.mediafire.com/file/h7vaod7j7ndafim/railway.apk/file",
         },
-
         {
           name: "Vantaan taxi web",
           link: "",
@@ -168,6 +167,18 @@ export const DATA = {
         },
         {
           name: "Fixcel web",
+          link: "",
+        },
+        {
+          name: "Reward Dragon web",
+          link: "",
+        },
+        {
+          name: "My bill wallet",
+          link: "",
+        },
+        {
+          name: "Baap network",
           link: "",
         },
       ],
