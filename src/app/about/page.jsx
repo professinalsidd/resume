@@ -5,6 +5,7 @@ import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/router";
 import { COLORS, useResponsive } from "@/themes/themes";
+import LayoutComp from "@/components/layout/layout";
 
 const AboutPage = () => {
   const { isDesktop, isTablet } = useResponsive();
@@ -14,8 +15,7 @@ const AboutPage = () => {
   //     router.push("/about");
   //   };
   return (
-    <div>
-      <NavbarComp />
+    <LayoutComp>
       <Box
         sx={{
           flex: 1,
@@ -100,7 +100,7 @@ const AboutPage = () => {
           />
         </Box>
       </Box>
-    </div>
+    </LayoutComp>
   );
 };
 
