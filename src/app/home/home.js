@@ -80,7 +80,7 @@ const HomePage = () => {
       <Box>
         <Image
           src="/assets/home.png"
-          alt="Profile Image"
+          alt="home Image"
           width={isDesktop ? 600 : isTablet ? 500 : 300}
           height={isDesktop ? 600 : isTablet ? 500 : 300}
           style={{

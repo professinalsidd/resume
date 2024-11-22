@@ -93,7 +93,7 @@ const ExperiencePage = () => {
         <Box>
           <Image
             src="/assets/experience.png"
-            alt="Profile Image"
+            alt="experience Image"
             width={isDesktop ? 600 : isTablet ? 500 : 300}
             height={isDesktop ? 600 : isTablet ? 500 : 300}
             style={{

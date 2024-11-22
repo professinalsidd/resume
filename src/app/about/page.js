@@ -72,7 +72,7 @@ const AboutPage = () => {
         <Box>
           <Image
             src="/assets/about.png"
-            alt="Profile Image"
+            alt="about Image"
             width={isDesktop ? 600 : isTablet ? 500 : 300}
             height={isDesktop ? 600 : isTablet ? 500 : 300}
             style={{

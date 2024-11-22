@@ -88,7 +88,7 @@ const SkillsPage = () => {
         <Box>
           <Image
             src="/assets/skills.png"
-            alt="Profile Image"
+            alt="Skills Image"
             width={isDesktop ? 600 : isTablet ? 500 : 300}
             height={isDesktop ? 600 : isTablet ? 500 : 300}
             style={{
