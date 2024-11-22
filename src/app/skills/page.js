@@ -87,7 +87,7 @@ const SkillsPage = () => {
         {/* Right Section */}
         <Box>
           <Image
-            src="/assets/project.png"
+            src="/assets/skills.png"
             alt="Profile Image"
             width={isDesktop ? 600 : isTablet ? 500 : 300}
             height={isDesktop ? 600 : isTablet ? 500 : 300}
