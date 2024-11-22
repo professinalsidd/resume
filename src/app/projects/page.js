@@ -7,13 +7,35 @@ import { COLORS, useResponsive } from "@/themes/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 const ProjectsPage = () => {
   const { isDesktop, isTablet, isMobile } = useResponsive();
   const router = useRouter();
 
+  // Track page view when the component mounts
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_title: "Home Page",
+        page_location: window.location.href,
+        page_path: "/",
+      });
+    }
+  }, []);
+
+  const trackButtonClick = () => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "button_click", {
+        event_category: "Navigation",
+        event_label: "Next Button",
+        value: 1,
+      });
+    }
+  };
+
   const handleClick = () => {
+    trackButtonClick();
     router.push("/skills");
   };
   return (

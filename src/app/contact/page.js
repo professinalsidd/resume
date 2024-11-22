@@ -4,7 +4,7 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import LayoutComp from "@/components/layout/layout";
 import { useResponsive } from "@/themes/themes";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import { input } from "./style";
@@ -21,6 +21,27 @@ const ContactPage = () => {
     message: "",
   });
 
+  // Track page view when the component mounts
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_title: "Home Page",
+        page_location: window.location.href,
+        page_path: "/",
+      });
+    }
+  }, []);
+
+  const trackButtonClick = () => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "button_click", {
+        event_category: "Navigation",
+        event_label: "Next Button",
+        value: 1,
+      });
+    }
+  };
+
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +54,7 @@ const ContactPage = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    trackButtonClick();
     // Send email using EmailJS
     if (formRef.current) {
       emailjs

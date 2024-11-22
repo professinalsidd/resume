@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useResponsive } from "@/themes/themes";
 import LayoutComp from "@/components/layout/layout";
@@ -11,7 +11,29 @@ const AboutPage = () => {
   const { isDesktop, isTablet, isMobile } = useResponsive();
   const router = useRouter();
 
+  // Track page view when the component mounts
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_title: "Home Page",
+        page_location: window.location.href,
+        page_path: "/",
+      });
+    }
+  }, []);
+
+  const trackButtonClick = () => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "button_click", {
+        event_category: "Navigation",
+        event_label: "Next Button",
+        value: 1,
+      });
+    }
+  };
+
   const handleNextClick = () => {
+    trackButtonClick();
     router.push("/experience");
   };
 
