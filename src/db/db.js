@@ -1,4 +1,69 @@
 export const DATA = {
+  skills: [
+    {
+      label: "Frontend Development",
+      details: [
+        {
+          name: "Core Technologies:",
+          details: "HTML5, CSS, JavaScript (ES6+), React.js, React Native",
+        },
+        {
+          name: "Frameworks & Libraries:",
+          details:
+            "Material UI, React Native Paper, Ant Design, React Bootstrap, Bootstrap",
+        },
+        {
+          name: "Advanced Skills:",
+          details:
+            "React with TypeScript, React Native with TypeScript, Next.js, Vite",
+        },
+      ],
+    },
+    {
+      label: "Backend Development",
+      details: [
+        {
+          name: "Core Technologies:",
+          details: "Node.js, Express.js",
+        },
+        {
+          name: "Database Management:",
+          details: "MongoDB",
+        },
+      ],
+    },
+    {
+      label: "Development Tools",
+      details: [
+        {
+          name: "Version Control:",
+          details: "GitHub, GitLab",
+        },
+        {
+          name: "Project Management:",
+          details: "Jira",
+        },
+        {
+          name: "Deployment Platforms:",
+          details: "Vercel",
+        },
+      ],
+    },
+    {
+      label: "UI/UX Design",
+      details: [
+        {
+          name: "Design Tools:",
+          details: "Figma",
+        },
+        {
+          name: "Specialized Libraries:",
+          details: "Redux Toolkit, REST API",
+        },
+      ],
+    },
+  ],
+
   projects: [
     {
       label: "Live Projects & GitHub Repositories",

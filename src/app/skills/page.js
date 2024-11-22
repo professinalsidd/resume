@@ -9,12 +9,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const ProjectsPage = () => {
+const SkillsPage = () => {
   const { isDesktop, isTablet } = useResponsive();
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/skills");
+    router.push("/contact");
   };
   return (
     <LayoutComp>
@@ -38,7 +38,7 @@ const ProjectsPage = () => {
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Projects
+            Skills
           </Typography>
 
           {/* Scrollable Container */}
@@ -52,7 +52,7 @@ const ProjectsPage = () => {
               scrollbarWidth: "none",
             }}
           >
-            {DATA.projects.map((item, index) => (
+            {DATA.skills.map((item, index) => (
               <Box
                 key={index}
                 sx={{
@@ -72,7 +72,7 @@ const ProjectsPage = () => {
                   <ul style={{ marginLeft: "1rem" }}>
                     {item.details.map((detail, i) => (
                       <li key={i} style={{ marginBottom: 5 }}>
-                        {detail.name}
+                        {detail.name} {detail.details}
                       </li>
                     ))}
                   </ul>
@@ -101,4 +101,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default SkillsPage;
