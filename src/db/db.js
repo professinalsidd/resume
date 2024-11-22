@@ -118,12 +118,24 @@ export const DATA = {
           link: "https://apps.apple.com/in/app/sahej-health-app/id6469026236",
         },
         {
+          name: "wintej App store",
+          link: "https://apps.apple.com/in/app/wintej/id6477755807",
+        },
+        {
           name: "Dank Play Store",
           link: "https://play.google.com/store/apps/details?id=com.joindank.dankapp&hl=en_IN",
         },
         {
           name: "NextGenCoders Program Web",
           link: "https://nextgencodersprogram.online/",
+        },
+        {
+          name: "Learnzconnect web",
+          link: "https://learnzconnect.com/",
+        },
+        {
+          name: "wintej web",
+          link: "https://wintej.com/",
         },
         {
           name: "PixelWaves web",
@@ -145,6 +157,7 @@ export const DATA = {
           name: "Railway Apk",
           link: "https://www.mediafire.com/file/h7vaod7j7ndafim/railway.apk/file",
         },
+
         {
           name: "Vantaan taxi web",
           link: "",
