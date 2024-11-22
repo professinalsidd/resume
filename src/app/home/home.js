@@ -1,14 +1,22 @@
 "use client";
 import Image from "next/image";
-import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { Box, Button, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 import { COLORS, useResponsive } from "@/themes/themes";
 
 const HomePage = () => {
   const { isDesktop, isTablet } = useResponsive();
+  const router = useRouter();
+
+  const handleNextClick = () => {
+    router.push("/about");
+  };
+
   return (
     <Box
       sx={{
+        position: "relative",
         flex: 1,
         display: "flex",
         justifyContent: "space-between",
@@ -17,6 +25,7 @@ const HomePage = () => {
         flexDirection: { xs: "column", md: "row" },
       }}
     >
+      {/* Main Content */}
       <Box sx={{ flex: 1, flexDirection: "column", gap: 3, display: "flex" }}>
         <Typography
           variant="h4"
@@ -53,12 +62,13 @@ const HomePage = () => {
           }}
         >
           <Button
+            onClick={handleNextClick}
             sx={{
               background: "transparent",
               border: "0.5px solid #CD6464",
               color: COLORS.WHITE,
               padding: "5px 30px",
-              "&: hover": {
+              "&:hover": {
                 background: "#CD6464",
               },
             }}
@@ -69,7 +79,7 @@ const HomePage = () => {
       </Box>
       <Box>
         <Image
-          src="/assets/home2.png"
+          src="/assets/home.png"
           alt="Profile Image"
           width={isDesktop ? 600 : isTablet ? 500 : 300}
           height={isDesktop ? 600 : isTablet ? 500 : 300}
